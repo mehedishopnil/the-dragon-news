@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Header = () => {
+const RightNav = () => {
     return (
         <div>
-            <h2>This is Header</h2>
+            <h2>Right Nav</h2>
         </div>
     );
 };
 
-export default Header;
+export default RightNav;
