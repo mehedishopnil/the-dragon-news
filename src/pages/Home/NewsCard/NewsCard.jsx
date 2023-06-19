@@ -1,13 +1,22 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import "./NewsCard.css";
-import { FaBeer, FaShare, FaShareAlt, FaTag } from "react-icons/fa";
+import {
+  FaEye,
+  FaRegBookmark,
+  FaRegStar,
+  FaRegStarHalf,
+  FaShareAlt,
+  FaStar,
+} from "react-icons/fa";
 import { Link } from "react-router-dom";
+import moment from "moment";
+import Rating from "react-rating";
 
 const NewsCard = ({ news }) => {
-  console.log(news.author.img);
-  const { _id, details, title, thumbnail_url } = news;
+  const { _id, details, title, image_url, rating, total_view } = news;
   const { img, published_date, name } = news.author;
+
   return (
     <Card className=" mb-4">
       <div className="row author-section">
@@ -17,14 +26,14 @@ const NewsCard = ({ news }) => {
           </div>
           <div className="author-info-container">
             <h4>{name}</h4>
-            <p>{published_date}</p>
+            <p>{moment(published_date).format("yyyy-mm-D")}</p>
           </div>
         </div>
 
         <div className="col social-share-btn d-flex justify-content-end  pt-4 pe-4">
           <div>
             <Link>
-              <FaTag />
+              <FaRegBookmark />
             </Link>
           </div>
           <div className="ps-3">
@@ -38,17 +47,45 @@ const NewsCard = ({ news }) => {
       <div>
         <Card.Body className="card-body">
           <Card.Title className="post-title">{title}</Card.Title>
-          <img src={thumbnail_url} alt="" />
+          <img src={image_url} alt="" />
+
           <Card.Text className="news-text">
-            {details} <br />
-            <Link className="read-more">Read More</Link>
+            {details.length < 250 ? (
+              <>{details}</>
+            ) : (
+              <>
+                {details.slice(0, 250)}...
+                <Link to={`/news/${_id}`} className="read-more ps-2">
+                  Read More
+                </Link>
+              </>
+            )}{" "}
+            <br />
           </Card.Text>
         </Card.Body>
       </div>
 
-      <Card.Footer className="text-muted">
-        <div></div>
-        <div></div>
+      <Card.Footer className="">
+        <div className="d-flex">
+          <div className="d-flex flex-grow-1">
+            <Rating className="rating"
+              placeholderRating={rating.number}
+              readonly
+              emptySymbol={<FaRegStar></FaRegStar>}
+              placeholderSymbol={<FaStar></FaStar>}
+              fullSymbol={<FaStar></FaStar>}
+            ></Rating>
+
+            <p className="ps-2 fw-medium text-body">{rating?.number}</p>
+          </div>
+
+          <div className=" total-view d-flex ">
+            <p>
+              <FaEye />
+            </p>
+            <p className="ps-2">{total_view}</p>
+          </div>
+        </div>
       </Card.Footer>
     </Card>
   );
