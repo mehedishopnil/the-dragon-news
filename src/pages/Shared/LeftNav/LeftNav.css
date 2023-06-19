@@ -1,6 +1,6 @@
 .categories{
     margin-top: 30px;
-    padding-left: 16px;
+    padding-left: 10px;
 }
 
 .categories a {
@@ -10,6 +10,7 @@
   font-size: 20px;
   line-height: 30px;
   color: #9f9f9f;
+  padding: 8px 15px;
 }
 
 .categories a:hover {
