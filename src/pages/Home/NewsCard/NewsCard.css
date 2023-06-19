@@ -60,9 +60,8 @@
  *********************/
 
 .card-body img {
-  width: 518px;
-  height: 262px;
-  margin: 5px 0px 20px 40px;
+  width: 100%;
+
   border-radius: 5px;
 }
 .post-title {
@@ -87,4 +86,15 @@
   line-height: 26px;
   color: #ff8c47;
   text-decoration: none;
+}
+
+.total-view {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: #706f6f;
+}
+
+.rating{
+  color: #ff8c47;
 }
