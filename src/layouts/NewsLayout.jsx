@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Header from "../pages/Shared/Header/header";
 import { Col, Container, Row } from "react-bootstrap";
 import Footer from "../pages/Shared/Footer/Footer";
@@ -6,6 +6,8 @@ import { Outlet } from "react-router-dom";
 import RightNav from "../pages/Shared/RigthNav/RightNav";
 
 const NewsLayout = () => {
+  
+
   return (
     <div>
       <Header></Header>
