@@ -1,13 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../../../assets/logo.png";
 import "./Header.css";
 import moment from "moment";
 import { Button, Container } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
-import Form from "react-bootstrap/Form";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { AuthContext } from "../../../providers/AuthProvider";
 
 const Header = () => {
   return (
@@ -24,7 +21,7 @@ const Header = () => {
       {/*********
        * Important Notification *
        * ***********/}
-      <div className="d-flex justify-content-center">
+      <div className="d-flex justify-content-center mb-5">
         <div className="d-flex notification-container justify-content-center">
           <Button className=" me-2 px-4 rounded-0 " variant="danger">
             Latest
@@ -41,28 +38,7 @@ const Header = () => {
       {/*********
        * Main Navbar *
        * ***********/}
-      <div>
-        <Navbar collapseOnSelect expand="lg" className="bg-white my-5">
-          <Container>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="mx-auto d-flex ">
-                <Nav.Link to="/">Home</Nav.Link>
-                <Nav.Link to="#about">About</Nav.Link>
-                <Nav.Link to="#about">Career</Nav.Link>
-              </Nav>
-              <Nav>
-                <Nav.Link href="#deets">Profile</Nav.Link>
-                <Nav.Link eventKey={2} href="#memes">
-                  <Button className=" me-2 px-4 rounded-0 " variant="secondary">
-                    Login
-                  </Button>
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
-        </Navbar>
-      </div>
+      <div></div>
     </Container>
   );
 };
