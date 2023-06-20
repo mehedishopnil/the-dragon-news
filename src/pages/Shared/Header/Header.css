@@ -1,3 +1,12 @@
+.nav-menu a{
+  text-decoration: none;
+  color: #706f6f;
+  font-weight: 500;
+}
+.nav-menu a:hover{
+  text-decoration: underline;
+}
+
 .header-content p {
   font-family: "Poppins";
   font-style: normal;

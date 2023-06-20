@@ -76,7 +76,7 @@ const NewsCard = ({ news }) => {
               fullSymbol={<FaStar></FaStar>}
             ></Rating>
 
-            <p className="ps-2 fw-medium text-body">{rating?.number}</p>
+            <p className="ps-2 fw-medium text-bodyc">{rating?.number}</p>
           </div>
 
           <div className=" total-view d-flex ">
