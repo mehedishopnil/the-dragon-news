@@ -15,7 +15,7 @@ const NavigationBar = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mx-auto d-flex nav-menu ">
               <Nav.Link>
-                <Link to="/">Home</Link>
+                <Link to="/category/0">Home</Link>
               </Nav.Link>
               <Nav.Link to="#about">About</Nav.Link>
               <Nav.Link to="#about">Career</Nav.Link>
@@ -30,7 +30,7 @@ const NavigationBar = () => {
 
               <Nav.Link eventKey={2} href="#memes">
                 {user ? (
-                  <Link to="/login">
+                  <Link to="/register">
                     <Button
                       className="login me-2 px-4 rounded-0 "
                       variant="secondary"
@@ -39,12 +39,14 @@ const NavigationBar = () => {
                     </Button>
                   </Link>
                 ) : (
+                  <Link to="/login">
                   <Button
                     className="login me-2 px-4 rounded-0 "
                     variant="secondary"
                   >
                     Login
                   </Button>
+                  </Link>
                 )}
               </Nav.Link>
             </Nav>
