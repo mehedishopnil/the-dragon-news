@@ -5,7 +5,17 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () =>{
+      logOut()
+      .then()
+      .catch(error =>
+        console.log(error)
+      )
+    }
+
+    
 
   return (
     <Container>
@@ -31,7 +41,7 @@ const NavigationBar = () => {
               <Nav.Link eventKey={2} href="#memes">
                 {user ? (
                   <Link to="/register">
-                    <Button
+                    <Button onClick={handleLogout}
                       className="login me-2 px-4 rounded-0 "
                       variant="secondary"
                     >
