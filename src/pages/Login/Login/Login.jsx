@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { Button, Container, Form } from "react-bootstrap";
 import "./Login.css";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../providers/AuthProvider";
 
 const Login = () => {
@@ -10,6 +10,8 @@ const Login = () => {
 
   const {userLogin} = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log('login page location',location);
 
   const handleLogin = event =>{
     event.preventDefault();
