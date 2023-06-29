@@ -11,7 +11,8 @@ import {
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import moment from "moment";
-import Rating from "react-rating";
+import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
 
 const NewsCard = ({ news }) => {
   const { _id, details, title, image_url, rating, total_view } = news;
@@ -67,15 +68,13 @@ const NewsCard = ({ news }) => {
 
       <Card.Footer className="">
         <div className="d-flex">
+
           <div className="d-flex flex-grow-1">
             <Rating className="rating"
-              placeholderRating={rating.number}
-              readonly
-              emptySymbol={<FaRegStar></FaRegStar>}
-              placeholderSymbol={<FaStar></FaStar>}
-              fullSymbol={<FaStar></FaStar>}
-            ></Rating>
-
+              style={{ maxWidth: 120 }}
+              value={rating}
+              readOnly
+            />
             <p className="ps-2 fw-medium text-bodyc">{rating?.number}</p>
           </div>
 
