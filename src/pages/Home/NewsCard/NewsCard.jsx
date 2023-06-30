@@ -72,7 +72,7 @@ const NewsCard = ({ news }) => {
           <div className="d-flex flex-grow-1">
             <Rating className="rating"
               style={{ maxWidth: 120 }}
-              value={rating}
+              value={Math.round(rating?.number || 0)}
               readOnly
             />
             <p className="ps-2 fw-medium text-bodyc">{rating?.number}</p>
