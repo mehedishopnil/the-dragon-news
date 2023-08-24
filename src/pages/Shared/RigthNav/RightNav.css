@@ -7,3 +7,10 @@
   text-align: center;
   color: white;
 }
+
+@media (min-width: 1800px) {
+  .amazing-info {
+      font-size: 18px; /* Increase font size for large screens */
+      margin-left: 190px; /* Increase padding for large screens */
+  }
+}
