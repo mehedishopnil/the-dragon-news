@@ -5,8 +5,10 @@ import { Link, useLoaderData } from "react-router-dom";
 import './News.css'
 import Category from "../../Home/Category/Category";
 import EditorsInsite from "../EditorsInsits/EditorsInsite";
+import useTitle from "../../../hooks/useTitle";
 
 const News = () => {
+  useTitle('News Details')
   const news = useLoaderData();
   console.log(news);
   const { image_url, details, title, category_id } = news;
